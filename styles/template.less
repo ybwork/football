@@ -1,0 +1,150 @@
+@header-height: 64px;
+
+.header {
+    width: 100%;
+    height: @header-height;
+    background: white;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.container-flex {    
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.logo {
+    &__link {
+        
+    }
+
+    &__img {
+       height: 48px; 
+    }
+}
+
+.commands {
+    display: flex;
+
+    /* задаёт отступ для всех потомков первой вложенности */
+    >* {
+        margin-right: @header-height / 8;
+
+        /* убирает отступ справа у последнего потомка */
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__text {
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-right: 20px;
+    }
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__img {
+        height: @header-height / 3;
+    }
+}
+
+.search-nav {
+    display: flex;
+
+    &__link {
+        text-decoration: none;
+    }
+
+    &__img {
+        height: @header-height / 2;
+    }
+}
+
+.slider-menu {   
+    >* {
+        &:first-child {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            background: #9c0707;
+            color: white;
+        }
+
+        &:last-child {
+            border-right: none;
+        }
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 97%;
+        margin: 0 auto;
+        height: @header-height;
+        background: #4c4b4b;
+        border-right: 1px solid black;
+    }
+
+    &-text {
+        .text__word {
+            font-size: 11px;
+        }
+    }
+
+    &-row {
+        .row-link {
+            &__img {
+                height: 13px;
+            }
+        }
+    }
+
+    &-title {
+        .title__date {
+            font-size: 7.5px;
+            color: white;
+        } 
+    }
+
+    &-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+
+        .content-team {        
+            &__img {
+                height: @header-height / 3;
+            }
+        }
+
+        .content-info {
+            &__score {
+                font-size: 18px;
+                text-align: center;
+                color: white;
+            }
+
+            &__status {
+                background: #9c0707;
+                color: white;
+                font-size: 8px;
+                text-align: center;
+            }
+        }
+    }
+}
+
